@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+h1 {
+    position: absolute;
+    z-index: 10;
+    left: 10px;
+    top: 10px;
+    font-size: 18px;
+    margin: 0;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 4px;
+}
+
+#canvas-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}

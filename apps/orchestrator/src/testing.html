@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Telemetry Tap</title>
+</head>
+<body>
+    <pre id="out">connecting…</pre>
+    <script>
+      // If your page is served by the orchestrator (same host:port),
+      // use a relative WS URL so it works in dev/prod:
+      const ws = new WebSocket(`ws://${location.host}/ws`);
+
+      ws.onopen = () => append("✅ connected");
+      ws.onclose = () => append("❌ disconnected");
+      ws.onerror = (e) => append("⚠️ error: " + (e.message || e));
+
+      ws.onmessage = (evt) => {
+        const msg = JSON.parse(evt.data);
+        if (msg.type === "telemetry") {
+          const { timestamp, vectors } = msg.payload;
+          append(`${new Date(timestamp).toLocaleTimeString()} — ${vectors.length} vectors`);
+          // Example: show first vector
+          if (vectors[0]) append(JSON.stringify(vectors[0], null, 2));
+        }
+      };
+
+      function append(s) {
+        const el = document.getElementById('out');
+        el.textContent += `\n${s}`;
+      }
+    </script>
+</body>
+</html>

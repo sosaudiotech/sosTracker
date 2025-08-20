@@ -1,0 +1,77 @@
+{
+  "dimensions_cm": {
+    "x": 1000,
+    "y": 300,
+    "z": 1000
+  },
+
+
+  "microphones": {
+    "mic_1": {
+      "position_cm": [ 0, 290, 0 ]
+    }
+  },
+
+
+
+  "usb_cameras": {
+    "usb_cam_1": {
+      "position_cm": [ -30.48, 290, -60.96 ],
+      "fov_deg": 78,
+      "pan_deg": 45,
+      "tilt_deg": 30
+    },
+    "usb_cam_2": {
+      "position_cm": [ 30.48, 290, -60.96 ],
+      "fov_deg": 78,
+      "pan_deg": -45,
+      "tilt_deg": 30
+    }
+  },
+
+  "ptz_cameras": {
+    "ptz_cam_1": { "position_cm": [ -120, 160, -363 ] },
+    "ptz_cam_2": { "position_cm": [ 120, 160, -363 ] }
+  },
+
+  "speaker_zone_cm": {
+    "min": [ -0, 0, -0 ],
+    "max": [ 0, 0, 0 ]
+  },
+
+  "calibration_markers": {
+    "eye_height_center": {
+      "position_cm": [ 0, 122, 0 ],
+      "color": "0xffffff"
+    },
+    "table_0": {
+      "position_cm": [ 0, 122, 244 ],
+      "color": "0x00ffff"
+    },
+    "table_-2": {
+      "position_cm": [ -200, 122, 244 ],
+      "color": "0x00ffff"
+    },
+    "table_-4": {
+      "position_cm": [ -250, 122, 188 ],
+      "color": "0x00ffff"
+    },
+    "table_-6": {
+      "position_cm": [ -250, 122, 80 ],
+      "color": "0x00ffff"
+    },
+    "table_2": {
+      "position_cm": [ 200, 122, 244 ],
+      "color": "0x00ffff"
+    },
+
+    "table_4": {
+      "position_cm": [ 250, 122, 188 ],
+      "color": "0x00ffff"
+    },
+    "table_6": {
+      "position_cm": [ 250, 122, 80 ],
+      "color": "0x00ffff"
+    }
+  }
+}
