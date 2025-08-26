@@ -489,8 +489,7 @@ function addLegendOverlay() {
     simOff.textContent = 'SIM OFF';
     simOff.onclick = () => fetch('/api/sim/stop', { method: 'POST' });
 
-    controlPanel.appendChild(simOn);
-    controlPanel.appendChild(simOff);
+    
 
     for (const axis of axes) {
         const deltas = [
@@ -512,7 +511,8 @@ function addLegendOverlay() {
             controlPanel.appendChild(btn);
         }
     }
-
+    controlPanel.appendChild(simOn);
+    controlPanel.appendChild(simOff);
 
     document.body.appendChild(controlPanel);
     const panel = document.createElement('div');

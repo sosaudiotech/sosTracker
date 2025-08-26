@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 
 const PORT = process.env.PORT || 3000;
-const PY_BASE = process.env.PY_TRACKER_BASE || "http://127.0.0.1:7001";
+const PY_BASE = process.env.PY_TRACKER_BASE || "http://0.0.0.0:7001";
 const CONFIG_PATH = process.env.CONFIG_PATH || path.resolve(process.cwd(), "../../config/room_config.json");
 
 const server = http.createServer(app);
@@ -60,27 +60,55 @@ async function loadConfig() {
     return lastConfig;
 }
 
+
+async function waitForTrackerReady() {
+    for (let i = 0; i < 10; i++) {
+        try {
+            const r = await fetch(`${PY_BASE}/health`);
+            if (r.ok) return true;
+        } catch (e) { }
+        await new Promise(res => setTimeout(res, 1000));
+    }
+    throw new Error("Tracker not ready");
+}
+
 async function applyConfigToPython() {
     if (!lastConfig) await loadConfig();
+    await waitForTrackerReady();
     const usb = lastConfig.usb_cameras || {};
     const usb_cameras = Object.entries(usb).map(([name, spec]) => ({
         name,
-        // index optional; service.py will resolve if missing
+        device: spec.device ?? undefined,
         index: spec.index ?? undefined,
         position_cm: spec.position_cm ?? [0, 0, 0],
         pan_deg: spec.pan_deg ?? 0,
         tilt_deg: spec.tilt_deg ?? 0,
-        fov_deg: spec.fov_deg ?? 78
+        fov_deg: spec.fov_deg ?? 78,
+        flip: spec.flip ?? "none"
     }));
-
+    // after loadConfig()
+    console.log("CONFIG_PATH:", CONFIG_PATH);
+    console.log("Loaded usb_cameras:", Object.keys((lastConfig || {}).usb_cameras || {}));
     try {
         const r = await fetch(`${PY_BASE}/config`, {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify({ usb_cameras })
         });
-        const j = await r.json().catch(() => ({}));
-        console.log(`Tracker config applied: ${usb_cameras.length} camera(s).`, j.index_map ? `Index map: ${JSON.stringify(j.index_map)}` : "");
+         if (!r.ok) {
+               const text = await r.text();
+               console.error("Tracker /config failed:", r.status, text);
+               return;
+             }
+         const j = await r.json().catch(() => ({}));
+         console.log(
+               `Tracker config applied: ${usb_cameras.length} camera(s).`,
+               j.source_map ? `source_map=${JSON.stringify(j.source_map)}` : "",
+               typeof j.opened === "number" ? `opened=${j.opened}` : "",
+               j.errors && Object.keys(j.errors).length ? `errors=${JSON.stringify(j.errors)}` : ""
+        );
+
+        j.source_map ? `Source map: ${JSON.stringify(j.source_map)}` : "";
     } catch (e) {
         console.error("Failed to apply tracker config:", e.message);
     }

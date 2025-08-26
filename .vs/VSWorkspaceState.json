@@ -2,12 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\apps",
-    "\\apps\\orchestrator",
     "\\apps\\orchestrator\\src",
-    "\\apps\\orchestrator\\src\\ui",
-    "\\apps\\tracker_py",
-    "\\apps\\tracker_py\\tracker"
+    "\\apps\\tracker_py\\tracker",
+    "\\config"
   ],
-  "SelectedNode": "\\apps\\orchestrator\\src\\ui\\visualizer_logic.js",
+  "SelectedNode": "\\apps\\calib_intrinsics_timer.py",
   "PreviewInSolutionExplorer": false
 }
