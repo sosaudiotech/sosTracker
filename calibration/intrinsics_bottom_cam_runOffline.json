@@ -1,0 +1,110 @@
+{
+  "image_size": [
+    1920,
+    1080
+  ],
+  "K": [
+    [
+      1280.1240629820054,
+      0.0,
+      962.3239087435537
+    ],
+    [
+      0.0,
+      1261.9009085634145,
+      577.3532120997079
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "dist": [
+    -5.358716161465705,
+    9.499641049986751,
+    0.0070610546033002914,
+    0.003302590705884096,
+    -4.442614493705526,
+    -5.318964505915327,
+    9.318952080416816,
+    -4.197569426702467,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rms_reproj_error": 1.2127070808427451,
+  "square_size_cm": 2.5,
+  "checkerboard": [
+    9,
+    5
+  ],
+  "samples": [
+    "calib_bottom_cam_rerun\\calib_20250826_132620_000.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132622_001.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132623_002.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132624_003.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132626_004.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132627_005.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132628_006.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132629_007.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132630_008.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132631_009.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132632_010.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132633_011.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132634_012.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132635_013.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132637_014.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132639_016.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132641_018.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132642_019.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132644_021.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132645_022.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132647_023.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132648_024.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132703_028.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132704_029.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132705_030.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132707_031.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132708_032.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132710_034.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132720_038.png",
+    "calib_bottom_cam_rerun\\calib_20250826_132721_039.png"
+  ],
+  "flipped_during_capture": false,
+  "per_image_error": [
+    0.20779389490820296,
+    0.19904274259733823,
+    0.18570744900659733,
+    0.2041791431200794,
+    0.23360950925150167,
+    0.17354262747683485,
+    0.17201986844683417,
+    0.1342298038986824,
+    0.1805361151080793,
+    0.1969718679621196,
+    0.20216245135871683,
+    0.15204012879858045,
+    0.13694986552225175,
+    0.1265896179294839,
+    0.1314838567673057,
+    0.1861199178474073,
+    0.18066851069536968,
+    0.23349993021221735,
+    0.22935772178207642,
+    0.20838248961731867,
+    0.2007991240810361,
+    0.22010914638482243,
+    0.14295110500178454,
+    0.13952870036692588,
+    0.1454160242887131,
+    0.14379391795193172,
+    0.18413365414615612,
+    0.24141776636359089,
+    0.1000701960108309,
+    0.10580179058150845
+  ]
+}

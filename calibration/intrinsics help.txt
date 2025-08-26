@@ -1,0 +1,153 @@
+Here’s a compact “how-to” for your `calib_intrinsics_timer.py`. It’s written for your current script (live + folder modes, SB corners, rational model, outlier drop, flip, preview, etc.).
+
+# calib\_intrinsics\_timer.py — Help & Usage
+
+## What it does
+
+* Finds checkerboard corners in either:
+
+  * **Live mode** (webcam/video capture), or
+  * **Folder mode** (pre-captured images).
+* Auto-samples on a timer in live mode, filters near-duplicates, then runs OpenCV calibration.
+* Saves **intrinsics JSON** (`K`, `dist`, RMS error, metadata).
+* Optional: rational distortion model, SB corner finder, outlier removal, undistort preview.
+
+---
+
+## Required prerequisites
+
+* OpenCV (cv2) with GUI support.
+* A printed checkerboard. Use **inner corners** (e.g., a 10×7 squares board has a **9×6** inner-corner pattern).
+* Accurate square size (measure with a ruler).
+
+---
+
+## Command-line arguments
+
+### Mode selection
+
+* `--images-dir PATH`
+  Run **folder mode** using all images in PATH. If omitted, the script runs **live mode**.
+* `--cam INDEX` (live)
+  Camera index (default: `0`).
+* `--res WxH` (live)
+  Capture resolution (default: `640x480`). Use the exact resolution you’ll later use (e.g., `1920x1080`).
+
+### Pattern & geometry
+
+* `--pattern CxR`
+  Checkerboard **inner corners**, e.g., `9x5` (default: `8x5`).
+* `--square-cm FLOAT`
+  Physical checker square size in centimeters (default: `2.5`).
+
+### Live capture controls
+
+* `--interval SECONDS`
+  Time between auto-samples when a grid is visible (default: `1.0`).
+* `--min-shift PIXELS`
+  Minimum RMS corner motion vs last capture to accept a new sample (default: `8.0`).
+* `--max-samples N`
+  Stop live capture after N valid samples (default: `50`; `0` = no limit).
+* `--out-dir PATH`
+  Where to save captured frames (default: `calib_shots`).
+
+### Processing options
+
+* `--flip`
+  Flip frames/images **180°** (for upside-down cameras).
+* `--sb-corners`
+  Use `findChessboardCornersSB` (more precise if available). Falls back to classic when needed.
+* `--rational`
+  Enable **CALIB\_RATIONAL\_MODEL** (estimates k4–k6 radial terms). Recommended for wide lenses.
+* `--drop-outliers N`
+  After an initial solve, automatically drop N worst per-image errors and recalibrate.
+* `--preview-undistort`
+  After solving, show a quick undistort preview of a sample.
+
+### Output
+
+* `--save-json FILE`
+  Output intrinsics JSON path (default: `intrinsics.json`).
+
+---
+
+## Controls in live mode
+
+* **c** = capture manually (only if grid found)
+* **u** = toggle flip ON/OFF
+* **q** or **ESC** = finish & calibrate
+  (Click the preview window first to ensure it has focus.)
+
+---
+
+## Examples (PowerShell)
+
+### Live mode (single line)
+
+```powershell
+python calib_intrinsics_timer.py --cam 0 --res 1920x1080 --pattern 9x5 --square-cm 2.5 --interval 1.0 --min-shift 8 --flip --max-samples 80 --sb-corners --rational --drop-outliers 5 --preview-undistort --out-dir .\calib_shots_1080 --save-json intrinsics_cam0_1080.json
+```
+
+### Live mode (multi-line with PowerShell backticks)
+
+```powershell
+python calib_intrinsics_timer.py `
+  --cam 0 `
+  --res 1920x1080 `
+  --pattern 9x5 `
+  --square-cm 2.5 `
+  --interval 1.0 `
+  --min-shift 8 `
+  --flip `
+  --max-samples 80 `
+  --sb-corners `
+  --rational `
+  --drop-outliers 5 `
+  --preview-undistort `
+  --out-dir .\calib_shots_1080 `
+  --save-json intrinsics_cam0_1080.json
+```
+
+### Folder mode (re-run on stored images)
+
+```powershell
+python calib_intrinsics_timer.py --images-dir .\calib_shots_1080 --pattern 9x5 --square-cm 2.5 --flip --sb-corners --rational --drop-outliers 10 --preview-undistort --save-json intrinsics_cam0_1080_refined.json
+```
+
+---
+
+## Output JSON schema
+
+```json
+{
+  "image_size": [W, H],
+  "K": [[fx, 0, cx], [0, fy, cy], [0, 0, 1]],
+  "dist": [k1, k2, p1, p2, k3, k4, k5, k6],  // if --rational used
+  "rms_reproj_error": 1.83,
+  "square_size_cm": 2.5,
+  "checkerboard": [C, R],
+  "samples": ["path/to/img1.png", "..."],
+  "flipped_during_capture": true,
+  "per_image_error": [e1, e2, ...]           // present when enabled in your script
+}
+```
+
+---
+
+## Tips for better RMS
+
+* Use **SB corners** (`--sb-corners`) and **rational** (`--rational`).
+* Ensure **diverse views**: near/far/tilt/rotation, and corners across the entire frame.
+* Lock **exposure, gain, focus**; avoid blur and glare.
+* Verify `--pattern` uses **inner corners** and `--square-cm` matches your print.
+* Use **folder mode** + `--drop-outliers N` to prune bad frames without reshooting.
+
+---
+
+## Troubleshooting
+
+* **No preview window**: ensure you’re in a desktop session; not headless. Try `cv2.namedWindow("calib_intrinsics", cv2.WINDOW_NORMAL)` (already in script).
+* **Q/ESC doesn’t exit**: click the preview window to give it focus; or set `--max-samples N` to auto-stop.
+* **High RMS (>3 px)**: enable `--rational`, add `--sb-corners`, improve capture diversity/lighting, prune worst frames.
+
+If you want, I can add a `--fisheye` flag that switches to OpenCV’s fisheye model for ultra-wide lenses (≥120° FOV).
