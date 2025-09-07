@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\sosTracker\\",
+  "WorkspaceRootPath": "C:\\Users\\sosau\\source\\repos\\sosTracker\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\sosTracker\\apps\\calib_intrinsics_timer.py||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:apps\\calib_intrinsics_timer.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\calib_intrinsics_timer.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:calibration\\calib_intrinsics_timer.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\sosTracker\\apps\\orchestrator\\src\\server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:apps\\orchestrator\\src\\server.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\undistorter.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:calibration\\undistorter.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\sosTracker\\config\\room_config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:config\\room_config.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\intrinsics help.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:calibration\\intrinsics help.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,50 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 248,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "calib_intrinsics_timer.py",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\sosTracker\\apps\\calib_intrinsics_timer.py",
-              "RelativeDocumentMoniker": "apps\\calib_intrinsics_timer.py",
-              "ToolTip": "C:\\Users\\Admin\\source\\sosTracker\\apps\\calib_intrinsics_timer.py",
-              "RelativeToolTip": "apps\\calib_intrinsics_timer.py",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-08-26T14:32:40.484Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "server.js",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\sosTracker\\apps\\orchestrator\\src\\server.js",
-              "RelativeDocumentMoniker": "apps\\orchestrator\\src\\server.js",
-              "ToolTip": "C:\\Users\\Admin\\source\\sosTracker\\apps\\orchestrator\\src\\server.js",
-              "RelativeToolTip": "apps\\orchestrator\\src\\server.js",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-24T00:28:55.34Z",
+              "Title": "undistorter.py",
+              "DocumentMoniker": "C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\undistorter.py",
+              "RelativeDocumentMoniker": "calibration\\undistorter.py",
+              "ToolTip": "C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\undistorter.py",
+              "RelativeToolTip": "calibration\\undistorter.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-09-03T20:34:33.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "calib_intrinsics_timer.py",
+              "DocumentMoniker": "C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\calib_intrinsics_timer.py",
+              "RelativeDocumentMoniker": "calibration\\calib_intrinsics_timer.py",
+              "ToolTip": "C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\calib_intrinsics_timer.py",
+              "RelativeToolTip": "calibration\\calib_intrinsics_timer.py",
+              "ViewState": "AgIAABYAAAAAAAAAAAAcwMwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-09-03T20:08:41.966Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "room_config.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\sosTracker\\config\\room_config.json",
-              "RelativeDocumentMoniker": "config\\room_config.json",
-              "ToolTip": "C:\\Users\\Admin\\source\\sosTracker\\config\\room_config.json",
-              "RelativeToolTip": "config\\room_config.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-24T00:20:28.664Z",
+              "Title": "intrinsics help.txt",
+              "DocumentMoniker": "C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\intrinsics help.txt",
+              "RelativeDocumentMoniker": "calibration\\intrinsics help.txt",
+              "ToolTip": "C:\\Users\\sosau\\source\\repos\\sosTracker\\calibration\\intrinsics help.txt",
+              "RelativeToolTip": "calibration\\intrinsics help.txt",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-09-03T20:08:16.664Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
             }
           ]
         }

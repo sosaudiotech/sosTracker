@@ -1,11 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\apps",
-    "\\apps\\orchestrator\\src",
-    "\\apps\\tracker_py\\tracker",
-    "\\config"
+    "\\calibration"
   ],
-  "SelectedNode": "\\apps\\calib_intrinsics_timer.py",
+  "SelectedNode": "\\calibration\\calib_intrinsics_timer.py",
   "PreviewInSolutionExplorer": false
 }
