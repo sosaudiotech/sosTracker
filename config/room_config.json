@@ -24,7 +24,7 @@
       "flip": "hv"
     },
     "usb_cam_2": {
-      "index": 1,
+      "index": 2,
       "position_cm": [ 52, 290, -363 ],
       "fov_deg": 78,
       "pan_deg": 30,
@@ -32,7 +32,7 @@
       "flip": "hv"
     },
     "usb_cam_3": {
-      "index": 2,
+      "index": 4,
       "position_cm": [ 0, 290, -363 ],
       "fov_deg": 78,
       "pan_deg": 0,

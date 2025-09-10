@@ -588,6 +588,19 @@ def preview_page():
             cam_ids.append(k)
     cam_ids = sorted(cam_ids)
 
+    # Build each card separately
+    cards = []
+    for cam in cam_ids:
+        cards.append(f"""
+        <div class='card'>
+          <div class='hdr'><div class='cam'>{cam}</div><div><a href='/stream/{cam}'>MJPEG</a></div></div>
+          <a class='imgwrap' href='/stream/{cam}'>
+            <img id='img_{cam}' src='/frame/{cam}.jpg'>
+          </a>
+          <div class='meta'>Tip: Click image to switch to MJPEG stream.</div>
+        </div>
+        """)
+
     html = f"""
 <!doctype html><html><head>
 <meta charset='utf-8'><title>Live Preview</title>
@@ -604,15 +617,7 @@ def preview_page():
 </style>
 </head><body>
 <div class='grid'>
-  {''.join([f"""
-  <div class='card'>
-    <div class='hdr'><div class='cam'>{cam}</div><div><a href='/stream/{cam}'>MJPEG</a></div></div>
-    <a class='imgwrap' href='/stream/{cam}'>
-      <img id='img_{cam}' src='/frame/{cam}.jpg'>
-    </a>
-    <div class='meta'>Tip: Click image to switch to MJPEG stream.</div>
-  </div>
-  """ for cam in cam_ids])}
+  {''.join(cards)}
 </div>
 <script>
   const cams = {json.dumps(cam_ids)};
@@ -627,6 +632,7 @@ def preview_page():
 </body></html>
 """
     return HTMLResponse(content=html)
+
 
 
 # -------- Entrypoint --------
